@@ -35,6 +35,15 @@ createApp({
     doneToggle(ind){
       ind.done = !ind.done;    
       console.log('doneToggle',ind)
+    },
+
+    cancel(ind){
+      if (this.tasks[ind].done){
+        console.log(this.tasks[ind].done)
+        this.tasks.splice(ind,1);
+      }else {
+        console.log('not',ind)
+      }
     }
 
   },

@@ -36,10 +36,12 @@ main ul li{
   display: flex;
   justify-content: space-between;
   list-style-type: none;
+
 }
 
 main ul li span{
   display: flex;
+  cursor: pointer;
 
 }
 

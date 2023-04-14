@@ -35,7 +35,7 @@
               {{task.text}}
             </span>
 
-            <span class="cancel debug">
+            <span @click.stop="cancel(index)" class="cancel debug">
               cancella
             </span> 
           </li>
