@@ -33,10 +33,23 @@ main {
   width: 100%;
 }
 main ul li{
+  display: flex;
+  justify-content: space-between;
   list-style-type: none;
 }
 
 main ul li span{
   display: flex;
-  justify-content: space-between;
+
+}
+
+main ul li span.task_text {
+
+}
+main ul li.done span.task_text {
+  text-decoration: line-through;
+}
+
+main ul li span.cancel {
+
 }

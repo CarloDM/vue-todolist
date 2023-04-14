@@ -23,26 +23,16 @@
       <main>
         <ul class="">
 
-          <li class="debug">
-            <span>
-              fake task Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente, labore. 
-              <span class="debug">cancella</span> 
+          <li
+            v-for="(task, index) in tasks"
+            
+            :class="{'done' : task.done}">
+            <span class="task_text">
+              {{task.text}}
             </span>
+            <span class="cancel" class="debug">cancella</span> 
           </li>
 
-          <li class="debug">
-            <span>
-              fake task Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente, labore. 
-              <span class="debug">cancella</span> 
-            </span>
-          </li>
-
-          <li class="debug">
-            <span>
-              fake task Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente, labore. 
-              <span class="debug">cancella</span> 
-            </span>
-          </li>
 
         </ul>
 
