@@ -29,8 +29,8 @@
 
           <li
             v-for="(task, index) in tasks"            
-            :class="{'done' : task.done}">
-
+            :class="{'done' : task.done}"
+            @click="doneToggle(tasks[index])">
             <span class="task_text">
               {{task.text}}
             </span>

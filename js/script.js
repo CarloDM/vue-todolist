@@ -32,6 +32,11 @@ createApp({
       this.inputTsk =''
     },
 
+    doneToggle(ind){
+      ind.done = !ind.done;    
+      console.log('doneToggle',ind)
+    }
+
   },
 
   mounted(){
