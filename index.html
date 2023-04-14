@@ -15,12 +15,34 @@
       <header>
 
         <h1>To do list</h1>
-        <input
-          @keyup.enter="pressEnter"
-          v-model="inputTsk"
-          id="inText"
-          type="text">
-        <p>error message</p>
+
+        <div id="userInput">
+          <input
+            @keyup.enter="pressEnter"
+            v-model="inputTsk"
+            id="inText"
+            type="text">
+
+            <select name="priority" id=""
+              v-model="inputPriority">
+              <option value="0">1</option>
+              <option value="1">2</option>
+              <option value="2">3</option>
+              <option value="3">4</option>
+              <option value="4">5</option>
+            </select>
+
+            <select name="colors" id=""
+              v-model="inputColor">
+              <option value="red">red</option>
+              <option value="blue">blu</option>
+              <option value="green">green</option>
+
+            </select>
+
+        </div>
+
+        <p class="errorMsg debug">{{errorMsg}}</p>
 
       </header>
 
@@ -28,18 +50,26 @@
         <ul class="">
 
           <li
-            v-for="(task, index) in tasks"            
+            v-for="(task, index) in tasks"  
+            class="task debug"          
             :class="{'done' : task.done}"
             @click="doneToggle(tasks[index])">
             <span class="task_text">
               {{task.text}}
             </span>
 
+            <span @click.stop="" class="priority debug">
+              {{parseInt(tasks[index].priority) + 1}}
+            </span> 
+
+            <span @click.stop="" class="color debug">
+              {{tasks[index].bgColor}}
+            </span> 
+
             <span @click.stop="cancel(index)" class="cancel debug">
               cancella
             </span> 
           </li>
-
 
         </ul>
 

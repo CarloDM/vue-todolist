@@ -6,6 +6,9 @@
 
 body{
   font-family: monospace;
+  font-size: 1rem;
+  overflow-x: hidden;
+
 }
 
 .debug{
@@ -14,19 +17,31 @@ body{
 
 .main_wrapper{
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 40px;
   background-color: rgb(104, 104, 104);
+
 }
 
 .container{
   width: 85%;
   min-height: 300px;
-  margin:  auto;
+  margin: 0 auto;
+  padding-bottom: 15px;
 }
 
 header {
   text-align: center;
+}
+
+.errorMsg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
+    height: 30px;
+    color: rgb(214, 0, 0);
+
 }
 
 main {
@@ -52,6 +67,13 @@ main ul li.done span.task_text {
   text-decoration: line-through;
 }
 
-main ul li span.cancel {
+main ul li span.cancel:hover {
+  color: red;
+}
 
+.task {
+  margin: 10px 20px;
+}
+.task:hover :not(span.cancel) {
+  color: antiquewhite;
 }

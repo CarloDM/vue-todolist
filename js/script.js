@@ -8,15 +8,13 @@ createApp({
   data(){
     return {
       tasks: [
-        {text : 'test task a', done: false, bgColor : '', priority:''},
-        {text : 'test task b', done: true,  bgColor : '', priority:''},
-        {text : 'test task c', done: false, bgColor : '', priority:''},
-        {text : 'test task c', done: false, bgColor : '', priority:''},
-        {text : 'test task c', done: true,  bgColor : '', priority:''},
-        {text : 'test task c', done: false, bgColor : '', priority:''},
+        {text : 'test task a', done: false, bgColor : 'green', priority:'1'},
       ],
 
       inputTsk : '',
+      inputPriority : 3,
+      inputColor : 'red',
+      errorMsg : '',
       newTask : {text : '', done: false, bgColor : '', priority:''}
 
     }
@@ -24,11 +22,12 @@ createApp({
 
   methods: {
     pressEnter(){
-      this.newTask = {text : '', done: false, bgColor : '', priority:''}
-      text = this.inputTsk;
-      this.newTask.text = text;
+      this.newTask = {text : '', done: false, bgColor : '', priority:''}     
+      this.newTask.text = this.inputTsk;
+      this.newTask.bgColor = this.inputColor;
+      this.newTask.priority = this.inputPriority;
       this.tasks.push(this.newTask)
-      console.log('press enter',this.inputTsk,this.newTask)
+      console.log('press enter',parseInt(this.inputPriority),this.inputColor,this.newTask )
       this.inputTsk =''
     },
 
@@ -41,7 +40,9 @@ createApp({
       if (this.tasks[ind].done){
         console.log(this.tasks[ind].done)
         this.tasks.splice(ind,1);
+        this.errorMsg = ''
       }else {
+        this.errorMsg = 'devi completare la task prima di poterla cancellare';
         console.log('not',ind)
       }
     }
@@ -49,10 +50,7 @@ createApp({
   },
 
   mounted(){
-    addNewTask();
-    function addNewTask(){
 
-    }
     
   }
 }).mount('#app')
