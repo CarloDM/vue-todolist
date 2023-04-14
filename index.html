@@ -10,7 +10,7 @@
 </head>
 <body>
   <div id="app" class="main_wrapper">
-    <div class="container debug">
+    <div class="container">
 
       <header>
 
@@ -42,7 +42,7 @@
 
         </div>
 
-        <p class="errorMsg debug">{{errorMsg}}</p>
+        <p class="errorMsg">{{errorMsg}}</p>
 
       </header>
 
@@ -51,24 +51,47 @@
 
           <li
             v-for="(task, index) in tasks"  
-            class="task debug"          
+            class="task "          
             :class="{'done' : task.done}"
             @click="doneToggle(tasks[index])">
-            <span class="task_text">
-              {{task.text}}
-            </span>
 
-            <span @click.stop="" class="priority debug">
-              {{parseInt(tasks[index].priority) + 1}}
-            </span> 
+            <div class="text_container">
+              <span class="task_text">
+                {{task.text}}
+              </span>
+            </div>
 
-            <span @click.stop="" class="color debug">
-              {{tasks[index].bgColor}}
-            </span> 
+            <div class="priority_container">
+              <span @click.stop="next(tasks[index])" class="priority ">
+                {{parseInt(tasks[index].priority) + 1}}
+              </span>
+              <select @click.stop="" name="individualPriority" id=""
+              v-model="tasks[index].priority">
+              <option value="0">1</option>
+              <option value="1">2</option>
+              <option value="2">3</option>
+              <option value="3">4</option>
+              <option value="4">5</option>
+            </select> 
+            </div>
+            <div class="bg_container">
+              <span @click.stop="" class="color ">
+                {{tasks[index].bgColor}}
+              </span> 
+              <select @click.stop="" name="individualColors" id=""
+              v-model="tasks[index].bgColor">
+              <option value="red">red</option>
+              <option value="blue">blu</option>
+              <option value="green">green</option>
+            </select>
+            </div>
 
-            <span @click.stop="cancel(index)" class="cancel debug">
-              cancella
-            </span> 
+            <div class="cancel_container">
+              <span @click.stop="cancel(index)" class="cancel ">
+                cancella
+              </span> 
+            </div>
+
           </li>
 
         </ul>

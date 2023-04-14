@@ -8,12 +8,17 @@ createApp({
   data(){
     return {
       tasks: [
-        {text : 'test task a', done: false, bgColor : 'green', priority:'1'},
+        {text :
+            'TEST TASK: Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam quos ipsam eligendi voluptatum? Repellendus aspernatur velit exercitationem minima quod.',
+            done: false, bgColor : 'green', priority:'1'},
+
       ],
 
       inputTsk : '',
       inputPriority : 3,
       inputColor : 'red',
+      individualColor :'',
+      individualPriority : 0,
       errorMsg : '',
       newTask : {text : '', done: false, bgColor : '', priority:''}
 
@@ -45,6 +50,11 @@ createApp({
         this.errorMsg = 'devi completare la task prima di poterla cancellare';
         console.log('not',ind)
       }
+    },
+
+    next(ind){
+      this.individualPriority++;
+      console.log(this.individualPriority);
     }
 
   },
