@@ -7,3 +7,36 @@
 body{
   font-family: monospace;
 }
+
+.debug{
+  background-color: rgba(255, 0, 0, 0.253);
+}
+
+.main_wrapper{
+  width: 100vw;
+  height: 100vh;
+  padding-top: 40px;
+  background-color: rgb(104, 104, 104);
+}
+
+.container{
+  width: 85%;
+  min-height: 300px;
+  margin:  auto;
+}
+
+header {
+  text-align: center;
+}
+
+main {
+  width: 100%;
+}
+main ul li{
+  list-style-type: none;
+}
+
+main ul li span{
+  display: flex;
+  justify-content: space-between;
+}
