@@ -15,7 +15,11 @@
       <header>
 
         <h1>To do list</h1>
-        <input type="text">
+        <input
+          @keyup.enter="pressEnter"
+          v-model="inputTsk"
+          id="inText"
+          type="text">
         <p>error message</p>
 
       </header>
@@ -24,13 +28,16 @@
         <ul class="">
 
           <li
-            v-for="(task, index) in tasks"
-            
+            v-for="(task, index) in tasks"            
             :class="{'done' : task.done}">
+
             <span class="task_text">
               {{task.text}}
             </span>
-            <span class="cancel" class="debug">cancella</span> 
+
+            <span class="cancel debug">
+              cancella
+            </span> 
           </li>
 
 
