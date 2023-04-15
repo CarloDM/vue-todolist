@@ -9,15 +9,24 @@ createApp({
     return {
       tasks: [
         {text :
-            'TEST TASK: Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam quos ipsam eligendi voluptatum? Repellendus aspernatur velit exercitationem minima quod.',
-            done: false, bgColor : 'green', priority:'1'},
+            'è possibile cambiare colore generale',
+            done: false, bgColor : 'task_bg1', priority:'3'},
+        {text :
+            'le task sono ordinate in base alla priorità',
+            done: false, bgColor : 'task_bg3', priority:'2'},
+        {text :
+            'è possibile variare colore e priorità per ogni task gia inserita',
+            done: false, bgColor : 'task_bg4', priority:'1'},
+        {text :
+            'cosa da fare completata',
+            done: true, bgColor : 'task_bg2', priority:'0'},
 
       ],
-
+      cardColor :'clrPalette0',
       inputTsk : '',
-      inputPriority : 3,
-      inputColor : 'red',
-      individualColor :'',
+      inputPriority : 0,
+      inputColor : 'task_bg1',
+
       individualPriority : 0,
       errorMsg : '',
       newTask : {text : '', done: false, bgColor : '', priority:''}
@@ -33,6 +42,7 @@ createApp({
       this.newTask.priority = this.inputPriority;
       this.tasks.push(this.newTask)
       console.log('press enter',parseInt(this.inputPriority),this.inputColor,this.newTask )
+      this.sortTasks();
       this.inputTsk =''
     },
 
@@ -53,14 +63,23 @@ createApp({
     },
 
     next(ind){
-      this.individualPriority++;
-      console.log(this.individualPriority);
+      if (parseInt(this.tasks[ind].priority) == 4){
+        this.tasks[ind].priority = 0 ;
+      } else {
+        this.tasks[ind].priority ++
+      }
+      this.sortTasks(),
+      console.log(this.tasks[ind]);
+    },
+
+    sortTasks(){
+      this.tasks.sort((a,b) => (a.priority < b.priority) ? 1 : (a.priority > b.priority) ? -1 : 0);
     }
 
   },
 
   mounted(){
-
+    this.sortTasks()
     
   }
 }).mount('#app')
