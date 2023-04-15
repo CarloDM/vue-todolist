@@ -18,3 +18,8 @@ Predisporre un campo di input testuale e un pulsante “aggiungi”: cliccando s
 **Bonus:**
 1- oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
 2- cliccando sul testo dell’item, invertire il valore della proprietà done del todo corrispondente (se `done` era uguale a `false`, impostare `true` e viceversa)Buon lavoro e buon divertimento!
+
+AUTOBONUS
+
+1- sfondo e task personalizzabile nel colore
+2- disposizione in base a priorità

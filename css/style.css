@@ -19,8 +19,6 @@ body{
   width: 100vw;
   height: 100vh;
   padding: 20px 0px;
-  /* padding-top: 40px;
-  padding-bottom: 40px; */
   background-color: rgb(204, 195, 195);
 }
 
@@ -60,9 +58,11 @@ header {
   text-align: center;
   height: 118px;
 }
+
 header h1 {
   margin: 0px 0px 10px 0px;
 }
+
 #userInput{
   margin-bottom: 5px;
 }
@@ -111,8 +111,8 @@ main ul li{
   list-style-type: none;
   opacity: 0.9;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.308);
-
 }
+
 
 .task_bg1{ background-color: rgba(250, 254, 255, 0.705);}
 .task_bg2{ background-color: rgba(255, 159, 147, 0.705);}
@@ -133,11 +133,13 @@ main ul li span.cancel:hover {
   border-radius: 10px;
   padding: 5px 20px;
 }
+
 .task:hover {
   border: 2px solid rgba(0, 0, 0, 0.459);
   padding: 3px 18px;
   opacity: 1;
 }
+
 .task.done{
   box-shadow: 0px 0px 15px rgb(255, 255, 255);
   opacity: 0.4;
@@ -168,6 +170,7 @@ main ul li.done span.task_text {
   font-weight: bold;
   cursor: pointer;
 }
+
 .bg_container{
   padding-top: 23px;
   margin-right: 10px;
@@ -184,7 +187,7 @@ main ul li.done span.task_text {
 .clrBox{
   width: 25%;
   height: 25%;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.507);
   cursor: pointer;
 }
 
