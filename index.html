@@ -54,7 +54,18 @@
 
         </div>
 
-        <p class="errorMsg">{{errorMsg}}</p>
+
+
+        <p class="errorMsg">
+          {{errorMsg}}
+
+          <button 
+          @click.stop="sortTasks()"
+          >
+          ordina
+        </button>
+        
+        </p>
 
       </header>
 

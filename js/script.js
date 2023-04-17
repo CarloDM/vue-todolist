@@ -38,7 +38,7 @@ createApp({
       this.newTask.priority = this.inputPriority;
       this.tasks.push(this.newTask)
       console.log('press enter',parseInt(this.inputPriority),this.inputColor,this.newTask )
-      this.sortTasks();
+      // this.sortTasks();
       this.inputTsk =''
     },
 
@@ -64,7 +64,7 @@ createApp({
       } else {
         this.tasks[ind].priority ++
       }
-      this.sortTasks(),
+      // this.sortTasks(),
       console.log(this.tasks[ind]);
     },
 
